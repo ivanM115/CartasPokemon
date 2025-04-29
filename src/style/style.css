@@ -1,0 +1,184 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ef9308;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 30px;
+}
+
+.nav-item {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+    background-color: #555;
+    color: #ffcc00;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logo{
+    height: 35px;
+}
+
+/* HOME */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin: 30px 0;
+    
+
+}
+
+.cards-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    width: 90vw;
+    padding: 20px;
+}
+
+.cards-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+
+    &::after {
+        content: '';
+        margin-top: 15px;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(95deg, transparent, #070707, #ef9308, #ef9308, #ef9308, #070707, transparent);
+        margin-bottom: 10px;
+    }
+}
+
+.cards-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    width: 100%;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-img {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/*JUGAR*/
+
+.mainJugar{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.info {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center; /* Alinea el título y el contenido */
+    align-items: center;
+    overflow: hidden;
+    transition: max-width 0.5s ease-in-out, max-height 0.5s ease-in-out; /* Cambia max-width a all para animar más propiedades */
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    padding: 10px; /* Añade algo de espacio interno */
+    max-width: 20%;
+    max-height: 70px; /* Altura inicial */
+    min-width: 400px;
+}
+
+.info:focus-within {
+    max-width: 100%; /* Ajusta según el contenido */
+    max-height: 100%;
+}
+
+.titulo {
+    position: relative; /* Cambia a relative para que no se superponga */
+    flex: 1; /* Ocupa espacio a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 10px;
+}
+
+.Esconder {
+    position: relative; /* Cambia a relative para que no se superponga */
+    display: none; /* Oculta el contenido inicialmente */
+    flex: 2; /* Ocupa más espacio a la derecha */
+    flex-direction: row;
+    padding: 10px;
+    gap: 30px;
+
+    li {
+        list-style: none; /* Elimina los puntos de la lista */
+        margin: 5px 0; /* Espacio entre los elementos de la lista */
+        border: #070707 2px solid;
+        border-radius: 10px;
+        padding: 5px;
+        height: 100%;
+
+    }
+}
+
+.info:focus .Esconder {
+    display: flex;
+}
