@@ -55,3 +55,11 @@ document.querySelectorAll('.info').forEach(info => {
         info.classList.toggle('expanded');
     });
 });
+
+exp = document.getElementById('expansiones')
+
+btn = document.getElementById('button-exp')
+
+btn.addEventListener('click', () => {
+    exp.classList.toggle('active');
+})
