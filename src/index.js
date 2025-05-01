@@ -1,6 +1,6 @@
 let sectionMasCaras = document.getElementById("imgCard_precio");
 
-fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=15&orderBy=-cardmarket.prices.averageSellPrice", {
+fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=21&orderBy=-cardmarket.prices.averageSellPrice", {
     headers: {
         'X-Api-Key': '3baf4606-71dd-40e5-8bdf-f66551f04723'
     }
@@ -27,7 +27,7 @@ fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=15&orderBy=-cardmarket
 
 let sectionMasNuevas = document.getElementById("imgCard_releaseDate");
 
-fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=15&orderBy=-set.releaseDate", {
+fetch("https://api.pokemontcg.io/v2/cards?page=1&pageSize=21&orderBy=-set.releaseDate", {
     Headers: {
         'X-Api-Key': '3baf4606-71dd-40e5-8bdf-f66551f04723'
     }
