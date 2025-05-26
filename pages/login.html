@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Login y Registro</title>
+    <link rel="stylesheet" href="../src/style/style.css">
     <script src="../src/login.js" defer></script>
     <script src="../src/register.js" defer></script>
 </head>
 <body>
-    <div style="display: flex; gap: 40px; justify-content: center; align-items: flex-start; margin-top: 40px;">
-        <!-- Formulario de Inicio de Sesión -->
-        <form id="login-form" style="display: flex; flex-direction: column; gap: 10px; min-width: 250px;">
+    <nav class="nav">
+        <ul class="nav-list">
+            <article class="nav-logo">
+                <img class="logo" src="../media/img/Pokémon_Trading_Card_Game_logo.png" alt="Logo" class="logo">
+            </article>
+            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+            <li class="nav-item" ><a class="nav-link" href="../pages/expansiones.html">Expansiones</a></li>
+        </ul>
+    </nav>
+    <div class="auth-body">
+    <div class="form-containmer">
+        <form id="login-form" class="form-box">
             <h2>Iniciar Sesión</h2>
             <label for="login-username">Usuario</label>
             <input type="text" id="login-username" name="login-username" required>
@@ -18,8 +28,8 @@
             <button type="submit" id="login-button">Entrar</button>
         </form>
 
-        <!-- Formulario de Registro -->
-        <form id="register-form" style="display: flex; flex-direction: column; gap: 10px; min-width: 250px;">
+
+        <form id="register-form" class="form-box">
             <h2>Registrarse</h2>
             <label for="register-username">Usuario</label>
             <input type="text" id="register-username" name="register-username" required>
@@ -27,6 +37,7 @@
             <input type="password" id="register-password" name="register-password" required>
             <button type="submit" id="register-button">Registrarse</button>
         </form>
+    </div>
     </div>
 </body>
 </html>

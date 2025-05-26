@@ -67,6 +67,25 @@ body {
     margin: 10px;
 }
 
+.logout-button {
+  background-color: #ffffff10;
+  color: white;
+  border: 1px solid #ffffff50;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(4px);
+  margin-right: 10px;
+}
+
+.logout-button:hover {
+  background-color: #ff4444;
+  border-color: #ff4444;
+  color: white;
+}
+
 /* HOME */
 .main {
     display: flex;
@@ -141,11 +160,9 @@ body {
 }
 
 .card-img:hover {
-    filter: blur(4px);
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: filter 0.3s, transform 0.3s, box-shadow 0.3s;
-    opacity: 1;
     /* Mantén la opacidad normal */
 }
 
@@ -153,32 +170,6 @@ body {
     position: relative;
     cursor: pointer;
 }
-
-.card::after {
-    content: "";
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/06/Eo_circle_grey_checkmark.svg');
-    /* URL de un tick */
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-}
-
-.card:hover::after {
-    display: block;
-}
-
-.card.selected {
-    color: #2ecc40 !important;
-    /* Verde */
-    transition: color 0.3s;
-}
-
 
 /* Expansiones */
 .main-expansion {
@@ -320,3 +311,65 @@ body {
     margin-bottom: 1rem;
     display: none;
 }
+
+/* login */
+.auth-body{
+background-color: #161616;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+}
+
+.form-container {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+      background-color: #222;
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 221, 0, 0.2);
+    }
+
+    .form-box {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+    }
+
+    .form-box h2 {
+      color: #ffdd00;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .form-box input {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: white;
+    }
+
+    .form-box input:focus {
+      outline: none;
+      border: 2px solid #ffdd00;
+    }
+
+    .form-box button {
+      background-color: #ffdd00;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-box button:hover {
+      background-color: #e6b800;
+    }

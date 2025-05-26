@@ -7,7 +7,7 @@ function addcard(id) {
     }
     let token = localStorage.getItem("token");
 
-    console.log("se ejecuta");
+    alert("Has añadido una carta");
     http.open("POST", "http://localhost:8080/Prueba1/AddCard", true);
     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     http.send("token=" + token + "&id=" + id);
