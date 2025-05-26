@@ -45,7 +45,7 @@ body {
     border-radius: 5px;
 }
 
-.logo{
+.logo {
     height: 35px;
 }
 
@@ -59,17 +59,8 @@ body {
 }
 
 
-.img-exp {
-    width: 250px;
-    height: 125px;
-    padding: 20px;
-    border: white 1px solid;
-    margin: 10px;
-    margin-left: 50px;
-    border-radius: 10px;
-}
 
-.link-exp{
+.link-exp {
     width: 250px;
     height: 125px;
     padding: 20px;
@@ -105,6 +96,7 @@ body {
     font-weight: 600;
     width: 100%;
     padding: 10px;
+    color: white;
 
     &::after {
         content: '';
@@ -138,6 +130,7 @@ body {
 .card-price {
     font-size: 18px;
     font-weight: 600;
+    color: white;
 }
 
 .card-img {
@@ -148,69 +141,44 @@ body {
 }
 
 .card-img:hover {
+    filter: blur(4px);
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: filter 0.3s, transform 0.3s, box-shadow 0.3s;
+    opacity: 1;
+    /* Mantén la opacidad normal */
 }
-/*JUGAR*/
 
-.mainJugar{
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-.info {
-    display: flex;
+.card {
     position: relative;
-    flex-direction: column;
-    justify-content: center; /* Alinea el título y el contenido */
-    align-items: center;
-    overflow: hidden;
-    transition: max-width 0.5s ease-in-out, max-height 0.5s ease-in-out; /* Cambia max-width a all para animar más propiedades */
-    background-color: #333;
-    color: white;
-    border-radius: 20px;
-    padding: 10px; /* Añade algo de espacio interno */
-    max-width: 20%;
-    max-height: 70px; /* Altura inicial */
-    min-width: 400px;
+    cursor: pointer;
 }
 
-.info:focus-within {
-    max-width: 100%; /* Ajusta según el contenido */
-    max-height: 100%;
+.card::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/06/Eo_circle_grey_checkmark.svg');
+    /* URL de un tick */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
 }
 
-.titulo {
-    position: relative; /* Cambia a relative para que no se superponga */
-    flex: 1; /* Ocupa espacio a la izquierda */
-    text-align: left; /* Alinea el texto a la izquierda */
-    padding: 10px;
+.card:hover::after {
+    display: block;
 }
 
-.Esconder {
-    position: relative; /* Cambia a relative para que no se superponga */
-    display: none; /* Oculta el contenido inicialmente */
-    flex: 2; /* Ocupa más espacio a la derecha */
-    flex-direction: row;
-    padding: 10px;
-    gap: 30px;
-
-    li {
-        list-style: none; /* Elimina los puntos de la lista */
-        margin: 5px 0; /* Espacio entre los elementos de la lista */
-        border: #070707 2px solid;
-        border-radius: 10px;
-        padding: 5px;
-        height: 100%;
-
-    }
+.card.selected {
+    color: #2ecc40 !important;
+    /* Verde */
+    transition: color 0.3s;
 }
 
-.info:focus .Esconder {
-    display: flex;
-}
 
 /* Expansiones */
 .main-expansion {
@@ -256,4 +224,99 @@ body {
 .expansion-container p:last-of-type {
     font-size: 14px;
     color: #cccccc;
+}
+
+/*Expansiones*/
+
+.expansiones {
+    display: block;
+}
+
+.flecha-der {
+    position: absolute;
+    right: 20px;
+    /* Ajusta la distancia del borde derecho */
+    bottom: 2px;
+    /* Ajusta la distancia del borde inferior */
+    font-size: 24px;
+    /* Tamaño de la flecha */
+    cursor: pointer;
+    color: white;
+}
+
+.flecha-izq {
+    position: absolute;
+    left: 20px;
+    /* Ajusta la distancia del borde izquierdo */
+    bottom: 2%;
+    /* Ajusta la distancia del borde inferior */
+    font-size: 24px;
+    /* Tamaño de la flecha */
+    cursor: pointer;
+    color: white;
+}
+
+.main-exp {
+    position: relative;
+    /* Necesario para que las flechas se posicionen dentro del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin: 30px 0;
+}
+
+/* login */
+.login-container {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    width: 320px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.7rem;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-container button:hover {
+    background: #1565c0;
+}
+
+.error {
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: none;
 }

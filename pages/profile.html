@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="../src/Escarlata-y-Purpura.js" defer></script>
     <link rel="stylesheet" href="../src/style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="../src/perfil.js" defer></script>
+    <script src="../src/login.js" defer></script>
 </head>
 <body>
 <header>
@@ -16,18 +17,18 @@
                 <img class="logo" src="../media/img/Pokémon_Trading_Card_Game_logo.png" alt="Logo" class="logo">
             </article>
             <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-            <li class="nav-item" id="button-exp"><a class="nav-link" href="#expansiones">Expansiones</a></li>
-            <li class="nav-item"><a class="nav-link" href="../pages/jugar.html">Como Jugar</a></li>
+            <li class="nav-item" id="button-exp"><a class="nav-link" href="./expansiones.html">Expansiones</a></li>
             <article class="nav-icon">
                 <i class="fa-regular fa-circle-user" style="color: white;"></i>
             </article>
         </ul>
     </nav>
+    
 </header>
-<main class="main">
+<main class="main" id="home">
     <article class="cards-row">
-        <h1 class="cards-title">Cartas del set</h1>
-        <section class="cards-container" id="imgCard_precio"></section>
+        <h1 class="cards-title">Tus Cartas</h1>
+        <section class="cards-container" id="cards"></section>
     </article>
 </main>
 </body>
