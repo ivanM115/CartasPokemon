@@ -29,18 +29,21 @@ function login() {
     let http = new XMLHttpRequest();
     http.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            console.log(http.responseText);
-            localStorage.setItem("token", http.responseText);
-            localStorage.setItem("username", username);
-            window.location.href = "http://127.0.0.1:5500/index.html";
+            const response = http.responseText.trim();
+            // Comprobamos si la respuesta parece un token UUID (36 caracteres y contiene guiones)
+            if (response.length === 36 && response.includes('-')) {
+                localStorage.setItem("token", response);
+                localStorage.setItem("username", username);
+                window.location.href = "http://127.0.0.1:5500/index.html";
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
         }
     }
-    console.log("se ejecuta");
     http.open("POST", "http://localhost:8080/Prueba1/Login", true);
     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     http.send("username=" + username + "&password=" + password);
 }
-
 let btn2 = document.getElementById("login-button");
 if (btn2) {
     btn2.addEventListener("click", function (event) {
