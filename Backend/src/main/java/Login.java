@@ -1,4 +1,3 @@
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,48 +17,47 @@ public class Login extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
-     * @see HttpServlet#HttpServlet()
+     * Constructor del servlet Login
      */
     public Login() {
         super();
-        // TODO Auto-generated constructor stub
+        // Constructor auto-generado
     }
 
     /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-     * response)
+     * Método GET (no utilizado en este caso)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-
+        // Método no implementado para GET
     }
 
     /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-     * response)
+     * Método POST para procesar el inicio de sesión
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-			Main.updateUsers();
+            Main.updateUsers(); // Actualiza la lista de usuarios desde la base de datos
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             try {
-                boolean found = Main.authUser(username, password);
+                boolean found = Main.authUser(username, password); // Comprueba si el usuario existe y la contraseña es correcta
                 if (found) {
-					
-					String token = UUID.randomUUID().toString();
-					Main.assignToken(username, token);
-                    response.getWriter().append(token);
-					System.out.println("found"+token);
-
+                    // Si las credenciales son correctas, genera y asigna un token
+                    String token = UUID.randomUUID().toString();
+                    Main.assignToken(username, token);
+                    response.getWriter().append(token); // Devuelve el token al frontend
+                    System.out.println("found"+token);
                 } else {
-					System.out.println("else");
+                    // Si no se encuentra el usuario o la contraseña es incorrecta
+                    System.out.println("else");
                     response.getWriter().append("User already exists: " + username);
                 }
             } catch (Exception e) {
+                // Manejo de errores durante la autenticación
                 response.getWriter().append("Error creating user: " + e.getMessage());
             }
         } catch (Exception ex) {
+            // Manejo de errores generales
             response.getWriter().append("Invalid request: " + ex.getMessage());
         }
     }
