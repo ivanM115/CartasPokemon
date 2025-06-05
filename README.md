@@ -45,8 +45,8 @@ Desenvolupar una aplicació web per a la gestió de col·leccions de cartes Pok�
 
 ```sql
 -- Crear la base de datos
-CREATE DATABASE IF NOT EXISTS mi_base_de_datos;
-USE mi_base_de_datos;
+CREATE DATABASE IF NOT EXISTS cartas_pokemon;
+USE cartas_pokemon;
 
 -- Crear tabla de usuarios
 CREATE TABLE usuarios (
